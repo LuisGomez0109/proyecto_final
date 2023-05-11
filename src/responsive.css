@@ -1,0 +1,52 @@
+@media (max-width: 925px){
+    #menu{
+        width: 80%;
+    }
+    #tracks{
+        text-align: center;
+    }
+}
+@media (max-width: 400px){
+    #menu{
+        width: 30%;
+    }
+    #nav{
+        margin-left: 22%;
+    }
+    #tracks{
+        text-align: center;
+    }
+    #nav span{
+        display: none;
+    }
+    #izq-part1, #izq-part2{
+        border-width: 0px;
+    }
+    .duracion{
+        display: none;
+    }
+    #cs{
+        display: block;
+    }
+    .audionoresponsive{
+        right:600px;
+    }
+    #rb, #corazon{
+        border-bottom-right-radius: 12px;
+        border-bottom-left-radius: 12px;
+    }
+    #biblio, #home{
+        border-top-left-radius: 12px;
+        border-top-right-radius: 12px;
+    }
+}
+::-webkit-scrollbar{
+    width: 10px;
+}
+::-webkit-scrollbar-thumb{
+    background: black;
+    border-radius: 12px;
+}
+::-webkit-scrollbar-track{
+    border-radius: 10px;
+}
