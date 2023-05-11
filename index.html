@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>StereoSync ¡Tu reproductor web!</title>
+    <link rel="stylesheet" href="src/estilos.css">
+  </head>
+  <body>
+    <div class="mt-0 p-0 bg-gradient-to-b from-neutral-700 to-zinc-900 w-screen h-screen flex flex-row" id="cont">
+      <header class="p-2 bg-white gap-1 m-2 rounded-lg w-3/12">
+              <div class="ml-1 bg-black p-5 rounded-lg" id="logo">
+                  <a href="#">
+                      <img src="Imagenes/StereoSyncFullLogo.svg" alt="">
+                  </a>
+              </div>             
+              <nav class="" id="full-izq">
+                  <div class="mt-5 w-full rounded-xl border-black border-2" id="izq-part1">
+                      <nav>
+                          <ul class="text-black text-base">
+                              <li>
+                                  <div class="flex flex-row items-center gap-3  cursor-pointer">
+                                      <img class="bg-black p-3 rounded-tl-lg" src="Imagenes/Home.svg" alt="">
+                                      <span>Home</span>
+                                  </div>
+                              </li>
+                              <li>
+                          <div class="flex flex-row items-center gap-3 cursor-pointer">
+                              <img class="bg-black p-3" src="/Imagenes/trends.svg" alt="">
+                              <span>Trends</span>
+                          </div>
+                      </li>
+                      <li>
+                          <div class="flex flex-row items-center gap-3 cursor-pointer">
+                              <img class="bg-black p-3 rounded-bl-lg" src="/Imagenes/Corazon.svg" alt="">
+                              <span>Favoritos</span>
+                          </div>
+                      </li>
+                  </ul>
+              </div>
+              <div class="mt-5 w-full rounded-xl border-black border-2" id="izq-part2">
+                  <ul class="text-black text-base">
+                      <li>
+                          <div class="flex flex-row items-center gap-3 cursor-pointer">
+                              <img class="bg-black p-3 rounded-tl-lg" src="/Imagenes/Libreria.svg" alt="">
+                              <span>Tu biblioteca</span>
+                          </div>
+                      </li>
+                      
+                      <li>
+                          <div class="flex flex-row items-center gap-3 cursor-pointer">
+                              <img class="bg-black p-3" src="/Imagenes/Añadir.svg" alt="">
+                              <span>Crear nueva playlist</span>
+                          </div> 
+                      </li>
+                      <li>
+                          <div class="flex flex-row items-center gap-3 cursor-pointer">
+                              <img class="bg-black p-3" src="/Imagenes/carpeta.svg" alt="">
+                              <span>Música nueva 2023</span>
+                          </div>   
+                      </li>
+                      <li>
+                          <div class="flex flex-row items-center gap-3 cursor-pointer">
+                              <img class="bg-black p-3" src="/Imagenes/carpeta.svg" alt="">
+                              <span>TikTok trend</span>
+                          </div>
+                      </li>
+                      <li>
+                          <div class="flex flex-row items-center gap-3 cursor-pointer">
+                              <img class="bg-black p-3 rounded-bl-lg" src="/Imagenes/carpeta.svg" alt="">
+                              <span>R&B Classic</span>
+                          </div>
+                      </li>
+                  </ul>
+              </div>
+            </nav>
+            </header>
+    <main class="flex flex-col h-full w-full">
+        <div class="w-full justify-center">
+            <div class="max-w-md mt-2">
+                <div class="relative flex items-center w-full h-12 rounded-lg focus-within:shadow-lg bg-white overflow-hidden">
+                    <div class="border-black grid place-items-center h-full w-12 text-black-300">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                        </svg>
+                    </div>
+                    <input class="peer h-full w-full outline-none text-sm text-black-700 pr-2" type="text" id="busqueda" placeholder="¿Qué deseas escuchar?" /> 
+                </div>
+            </div>
+            <div class="tracklist">
+                <p class="text-4xl text-white font-bold block">Lista de reproducción</p>
+            </div>
+        </div>
+        <hr class="my-2 w-full">
+        <div class="overflow-y-scroll h-screen w-full" id="lista">
+        </div>
+        <div class="bg-zinc-700 w-full flex" id="current_song">
+        </div>
+    </main>
+</div>
+<script type="module" src="/main.js"></script>
+</body>
+</html>
