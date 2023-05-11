@@ -5,13 +5,39 @@ import { removeAllChild, useLocalstorage } from './src/utils';
 
 const tracklist = document.querySelector('#lista');
 const currentSong = document.getElementById('current_song');
+
 const storage = useLocalstorage('current_song');
 
-getData((song) => {
+getData(data => {
+
   removeAllChild(tracklist);
-  song.map((div) => {
-    const songElement = songComponent(div);
+
+  data.map(song => {
+    const songElement = songComponent(song);
+
     songElement.addEventListener('click', () => {
+
+      // Observo que en este caso, tienes una addEventListener sin ninguna acción
+      // Es un EventListener vacío
+      // Agrega la funcionalidad
+
+
+      // Le asigno el dato al local estorage para que se guarde
+      // al refrescar el navegador
+      storage.setItem(song)
+
+      // Ahora cambio la canción y la busco 
+      // desde el localstorage con la funcion que creé
+      // En otras palabras:
+      // La meto en el localStorage y luego la busco
+      // RECUERDA: En el localStorage guardo el objeto con los datos de la canción
+      setCurrentSong(
+        currentSongComponent(
+          storage.getItem()
+        )
+      )
+
+
     });
     tracklist.appendChild(songElement);
   });
@@ -22,7 +48,19 @@ const setCurrentSong = (child) => {
   currentSong.appendChild(child);
 }
 
-if (storage.getItem('#current_song')) { // Asegurarse de proporcionar una clave para getItem
-  const data = storage.getItem('#current_song'); // Utilizar la misma clave que en getItem
+
+
+
+// Asegurarse de proporcionar una clave para getItem
+if (storage.getItem('current_song')) { 
+  // Utilizar la misma clave que en getItem
+  const data = storage.getItem('current_song');
   setCurrentSong(currentSongComponent(data));
+}
+// Faltaba asignarle un valor inicial al localStorage
+// La funcion para manejarla está creada, pero no se le ha asignado 
+// un valor todavía.
+// Se lo asigno solo si no existe
+else {
+  getData(data => storage.setItem(data[0]))
 }
