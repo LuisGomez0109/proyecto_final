@@ -1,8 +1,17 @@
-export const songComponent = (song, event = () => {}) => {
+export const songComponent = (
+  song, 
+  // event = () => {}
+) => {
   const div = document.createElement('div');
-  div.addEventListener('click', () => {
-    event(song.title);
-  });
+
+
+  // Dado que el evento lo agregas desde el main.js
+  // Ese EventListene es inecesario
+  // div.addEventListener('click', () => {
+
+  //   event(song.title);
+  // });
+
   div.innerHTML = `
   <div class="flex flex-row gap-2 items-center p-2 cursor-pointer">
   <div class="h-10">
@@ -20,6 +29,7 @@ export const songComponent = (song, event = () => {}) => {
   return div;
 };
 
+// Corrige los estilos de este componente
 export const currentSongComponent = (song) => {
   const div = document.createElement('div');
   div.innerHTML = `
