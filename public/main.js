@@ -1,7 +1,7 @@
 import './src/estilos.css'
-import {songComponent, currentSongComponent} from './src/components'
-import {getData} from './src/services'
-import { removeAllChild, useLocalstorage } from './src/utils';
+import {songComponent, currentSongComponent} from '../src/components'
+import {getData} from '../src/services'
+import { removeAllChild, useLocalstorage } from '../src/utils';
 
 const tracklist = document.querySelector('#lista');
 const currentSong = document.getElementById('current_song');
@@ -16,7 +16,10 @@ getData(data => {
     const songElement = songComponent(song);
 
     songElement.addEventListener('click', () => {
+
       const event = song
+
+
       // Observo que en este caso, tienes una addEventListener sin ninguna acción
       // Es un EventListener vacío
       // Agrega la funcionalidad
@@ -64,3 +67,4 @@ if (storage.getItem('current_song')) {
 else {
   getData(data => storage.setItem(data[0]))
 }
+
